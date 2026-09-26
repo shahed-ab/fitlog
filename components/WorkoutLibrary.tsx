@@ -66,7 +66,6 @@ export default function WorkoutLibrary({ initialWorkouts = [] }: WorkoutLibraryP
 
   return (
     <section id="library" className="w-full pt-8 pb-20 scroll-mt-24">
-      {/* Header & Controls */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
         <div>
           <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-white uppercase tracking-tight mb-2">
@@ -77,9 +76,7 @@ export default function WorkoutLibrary({ initialWorkouts = [] }: WorkoutLibraryP
           </p>
         </div>
 
-        {/* Search & Sort Controls */}
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-          {/* Search Input */}
           <div className="relative min-w-[240px] sm:min-w-[280px]">
             <Search className="w-4 h-4 text-[#8b8f98] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
             <input
@@ -100,7 +97,6 @@ export default function WorkoutLibrary({ initialWorkouts = [] }: WorkoutLibraryP
             )}
           </div>
 
-          {/* Sort By Dropdown */}
           <div className="relative">
             <button
               onClick={() => setIsSortOpen((prev) => !prev)}
@@ -138,7 +134,6 @@ export default function WorkoutLibrary({ initialWorkouts = [] }: WorkoutLibraryP
         </div>
       </div>
 
-      {/* Grid: 3 columns on desktop, 2 columns on tablet, 1 on mobile */}
       {isLoading ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {Array.from({ length: 6 }).map((_, index) => (
@@ -151,7 +146,7 @@ export default function WorkoutLibrary({ initialWorkouts = [] }: WorkoutLibraryP
           <h3 className="font-display text-xl font-bold text-white uppercase mb-2">
             No matching lifts
           </h3>
-          <p className="text-sm text-[#8b8f98] max-w-sm mx-auto mb-5">
+          <p className="text-sm text-[#8b8f98] max-w-sm mx-auto mb-6">
             We couldn&apos;t find any workout matching &ldquo;{searchQuery}&rdquo;. Try another term.
           </p>
           <button
