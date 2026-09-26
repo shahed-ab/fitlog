@@ -104,7 +104,7 @@ export default async function WorkoutDetailPage({ params }: WorkoutPageProps) {
             </h2>
             <ol className="space-y-3">
               {workout.instructions.map((step, index) => (
-                <li key={index} className="flex items-start gap-3.5 text-sm text-[#c4c7cc]">
+                <li key={index} className="flex items-start gap-3.6 text-sm text-[#c4c7cc]">
                   <span className="font-mono text-xs font-bold text-[#8b8f98] mt-0.5 min-w-[16px]">
                     {index + 1}.
                   </span>
