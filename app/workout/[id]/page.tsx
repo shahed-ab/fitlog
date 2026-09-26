@@ -47,8 +47,7 @@ export default async function WorkoutDetailPage({ params }: WorkoutPageProps) {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start">
-        {/* Left Column: Large Media / Illustration */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-9 lg:gap-15 items-start">
         <div className="lg:col-span-6 w-full">
           <div className="relative aspect-[4/5] sm:aspect-square lg:aspect-[4/5] w-full rounded-2xl bg-[#161922] border border-[#232732] overflow-hidden shadow-2xl">
             <Image
@@ -63,19 +62,15 @@ export default async function WorkoutDetailPage({ params }: WorkoutPageProps) {
           </div>
         </div>
 
-        {/* Right Column: Workout Details */}
         <div className="lg:col-span-6 flex flex-col justify-start">
-          {/* Title */}
           <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-black uppercase text-white tracking-tight leading-[1.1] mb-3">
             {workout.name}
           </h1>
 
-          {/* Description */}
           <p className="text-[#8b8f98] text-sm sm:text-base leading-relaxed mb-4">
             {workout.description}
           </p>
 
-          {/* Muscle Group Pills (Mixed case) */}
           <div className="flex flex-wrap gap-2 mb-6">
             {workout.muscleGroups.map((group) => (
               <span
@@ -87,7 +82,6 @@ export default async function WorkoutDetailPage({ params }: WorkoutPageProps) {
             ))}
           </div>
 
-          {/* Key Specs Panel */}
           <div className="rounded-xl bg-[#161922] border border-[#232732] divide-y divide-[#232732]/70 overflow-hidden mb-8">
             {specs.map((item) => (
               <div
@@ -104,8 +98,7 @@ export default async function WorkoutDetailPage({ params }: WorkoutPageProps) {
             ))}
           </div>
 
-          {/* Instructions Section */}
-          <div className="mb-6">
+          <div className="mb-7">
             <h2 className="font-display text-lg font-bold uppercase tracking-wider text-white mb-4">
               INSTRUCTIONS
             </h2>
@@ -121,7 +114,6 @@ export default async function WorkoutDetailPage({ params }: WorkoutPageProps) {
             </ol>
           </div>
 
-          {/* Call-to-action Buttons */}
           <WorkoutDetailActions workout={workout} />
         </div>
       </div>
