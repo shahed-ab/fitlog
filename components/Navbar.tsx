@@ -18,7 +18,6 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full bg-[#0f1115]/95 backdrop-blur-md border-b border-[#232732]">
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-2">
-        {/* Brand / Logo */}
         <Link href="/" className="flex items-center gap-2 sm:gap-3 group flex-shrink-0">
           <div className="relative w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center transition-transform group-hover:scale-105">
             <Image
@@ -35,7 +34,6 @@ export default function Navbar() {
           </span>
         </Link>
 
-        {/* Center Navigation */}
         <nav className="flex items-center gap-1 sm:gap-2">
           <Link
             href="/"
@@ -59,7 +57,6 @@ export default function Navbar() {
           </Link>
         </nav>
 
-        {/* Right Status Badges */}
         <div className="flex items-center gap-2 sm:gap-5 flex-shrink-0">
           <Link
             href="/my-plan"
