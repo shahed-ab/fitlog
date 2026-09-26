@@ -66,8 +66,7 @@ export default function MyPlanView() {
   }, [filteredList, sortBy]);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-      {/* Title & Subtitle */}
+    <div className="max-w-7xl mx-auto px-4 sm:px-5 lg:px-8 py-8 sm:py-12">
       <div className="mb-8">
         <h1 className="font-display text-4xl sm:text-5xl font-black text-white uppercase tracking-tight mb-2">
           MY PLAN
@@ -77,10 +76,8 @@ export default function MyPlanView() {
         </p>
       </div>
 
-      {/* Metrics Row: One bordered card split into 3 stats */}
       <div className="rounded-2xl bg-[#161922] border border-[#232732] p-6 sm:p-8 mb-10 shadow-lg">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 divide-y sm:divide-y-0 sm:divide-x divide-[#232732]">
-          {/* Exercises */}
           <div className="sm:pr-6">
             <span className="text-xs font-semibold uppercase tracking-wider text-[#8b8f98] block mb-2">
               Exercises
@@ -90,7 +87,6 @@ export default function MyPlanView() {
             </div>
           </div>
 
-          {/* Minutes */}
           <div className="pt-6 sm:pt-0 sm:px-8">
             <span className="text-xs font-semibold uppercase tracking-wider text-[#8b8f98] block mb-2">
               Minutes
@@ -100,7 +96,6 @@ export default function MyPlanView() {
             </div>
           </div>
 
-          {/* Calories */}
           <div className="pt-6 sm:pt-0 sm:pl-8">
             <span className="text-xs font-semibold uppercase tracking-wider text-[#8b8f98] block mb-2">
               Calories
@@ -112,9 +107,7 @@ export default function MyPlanView() {
         </div>
       </div>
 
-      {/* Controls Bar: Tabs, Search, and Sort */}
       <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 mb-8">
-        {/* Tabs: Pill-style switcher */}
         <div className="inline-flex p-1 bg-[#12141c] border border-[#232732] rounded-xl self-start">
           <button
             type="button"
@@ -138,9 +131,7 @@ export default function MyPlanView() {
           </button>
         </div>
 
-        {/* Right side: Search & Sort controls */}
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-          {/* Search Input */}
           <div className="relative min-w-[200px] sm:min-w-[240px]">
             <Search className="w-3.5 h-3.5 text-[#8b8f98] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
             <input
@@ -160,7 +151,6 @@ export default function MyPlanView() {
             )}
           </div>
 
-          {/* Sort By Dropdown */}
           <div className="relative">
             <button
               onClick={() => setIsSortOpen((prev) => !prev)}
@@ -198,14 +188,12 @@ export default function MyPlanView() {
         </div>
       </div>
 
-      {/* Loading state before hydration */}
       {!isHydrated ? (
         <div className="py-20 text-center text-[#8b8f98]">
           <div className="inline-block w-6 h-6 border-2 border-[#ccff00] border-t-transparent rounded-full animate-spin mb-3" />
           <p className="text-sm font-medium">Loading workouts…</p>
         </div>
       ) : sortedList.length === 0 ? (
-        /* Empty State */
         <div className="rounded-2xl border border-dashed border-[#232732] bg-[#161922]/40 py-20 px-6 text-center max-w-4xl mx-auto my-4">
           <Dumbbell className="w-10 h-10 text-[#8b8f98] mx-auto mb-4 opacity-40" />
           <h2 className="font-display text-2xl sm:text-3xl font-bold uppercase tracking-wider text-white mb-2">
@@ -224,7 +212,6 @@ export default function MyPlanView() {
           </Link>
         </div>
       ) : (
-        /* Populated List: Row Cards */
         <div className="space-y-4">
           {sortedList.map((workout: Workout) => {
             const done = isItemDone(workout.id);
@@ -237,9 +224,7 @@ export default function MyPlanView() {
                     : "border-[#232732] hover:border-[#3b4356]"
                   }`}
               >
-                {/* Left: Thumbnail & Details */}
                 <div className="flex items-center gap-4 sm:gap-6 min-w-0 flex-1">
-                  {/* Thumbnail */}
                   <Link
                     href={`/workout/${workout.id}`}
                     className="relative w-24 h-16 sm:w-36 sm:h-24 rounded-xl overflow-hidden bg-[#12141a] flex-shrink-0 group"
@@ -254,7 +239,6 @@ export default function MyPlanView() {
                     />
                   </Link>
 
-                  {/* Info */}
                   <div className="min-w-0 flex-1">
                     <div className="flex items-center gap-2 mb-1">
                       <Link
@@ -274,7 +258,6 @@ export default function MyPlanView() {
                       {workout.equipment}
                     </p>
 
-                    {/* Stats row with icons */}
                     <div className="flex flex-wrap items-center gap-3 sm:gap-5 text-xs text-[#8b8f98]">
                       <div className="flex items-center gap-1.5">
                         <Clock className="w-3.5 h-3.5 text-[#8b8f98]" />
@@ -292,9 +275,7 @@ export default function MyPlanView() {
                   </div>
                 </div>
 
-                {/* Right: Action Buttons */}
                 <div className="flex items-center justify-end gap-2.5 sm:gap-3 border-t md:border-t-0 pt-3 md:pt-0 border-[#232732]/60 flex-shrink-0">
-                  {/* View Details Button */}
                   <Link
                     href={`/workout/${workout.id}`}
                     className="px-4 py-2 rounded-full text-xs font-semibold text-white border border-[#232732] hover:border-[#3b4356] hover:bg-white/5 transition-colors"
@@ -302,7 +283,6 @@ export default function MyPlanView() {
                     View Details
                   </Link>
 
-                  {/* Mark as Done (Today's Plan tab only) */}
                   {activeTab === "today" && (
                     <button
                       type="button"
@@ -317,7 +297,6 @@ export default function MyPlanView() {
                     </button>
                   )}
 
-                  {/* Remove Button (X) */}
                   <button
                     type="button"
                     onClick={() => {
