@@ -35,7 +35,7 @@ export default function Hero() {
             </a>
           </div>
 
-          <div className="lg:col-span-5 relative w-full h-72 sm:h-96 lg:h-full min-h-[380px] flex items-center justify-center lg:justify-end overflow-hidden">
+          <div className="lg:col-span-5 relative w-full h-72 sm:h-95 lg:h-full min-h-[380px] flex items-center justify-center lg:justify-end overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-[#161922] via-transparent to-transparent z-10 pointer-events-none lg:w-32" />
             <div className="relative w-full h-full flex items-center justify-center p-4">
               <Image
